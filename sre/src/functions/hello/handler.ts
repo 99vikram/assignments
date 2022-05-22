@@ -1,15 +1,17 @@
-import { formatJSONResponse } from '@libs/api-gateway';
-import { middyfy } from '@libs/lambda';
+import { formatJSONResponse } from "@libs/api-gateway";
+import { middyfy } from "@libs/lambda";
 
-import schema from './schema';
+import schema from "./schema";
 
-import type { ValidatedEventAPIGatewayProxyEvent } from '@libs/api-gateway';
+import type { ValidatedEventAPIGatewayProxyEvent } from "@libs/api-gateway";
 
-const hello: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) => {
-    return formatJSONResponse({
-        message: `Hello ${event.body.name}, welcome to OSlash!`,
-        event,
-    });
-}
+const hello: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
+  event
+) => {
+  return formatJSONResponse({
+    message: `Hello ${event.body.name}, welcome to OSlash! with GAURAv`,
+    event,
+  });
+};
 
 export const main = middyfy(hello);
