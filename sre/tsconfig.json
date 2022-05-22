@@ -5,12 +5,18 @@
             "ESNext"
         ],
         "moduleResolution": "node",
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "resolveJsonModule": true,
         "removeComments": true,
         "sourceMap": true,
         "target": "ES2020",
-        "outDir": "lib"
+        "outDir": "lib",
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+        "importHelpers": true,
+        "incremental": true,
+        "watch": true,
     },
     "include": [
         "src/**/*.ts",
@@ -21,7 +27,9 @@
         ".serverless/**/*",
         ".webpack/**/*",
         "_warmup/**/*",
-        ".vscode/**/*"
+        ".vscode/**/*",
+        "*.config.js",
+        "**/*.js"
     ],
     "ts-node": {
         "require": [
